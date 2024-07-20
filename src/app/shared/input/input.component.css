@@ -1,0 +1,10 @@
+.text-input{
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.text-input input{
+  padding: 4px;
+  border-radius: 6px;
+}

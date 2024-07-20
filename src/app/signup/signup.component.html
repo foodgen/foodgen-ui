@@ -1,0 +1,32 @@
+<div class="signup-wrapper">
+  <form action="">
+    <div class="signup-paper">
+      <div class="logo-part">
+        <img src="/assets/logo.png" alt="logo" height="80px" width="80px">
+      </div>
+      <app-input label="Email"></app-input>
+      <app-input label="Username"></app-input>
+      <div class="sex">
+        <span>Sex</span>
+        <select name="" id="">
+          <option value="H">Homme</option>
+          <option value="F">Femme</option>
+        </select>
+      </div>
+      <div class="allergies">
+        <div>Do you have allergies ?</div>
+        <div class="allergies-checkboxes-wrapper">
+          <app-mini-search mini-search-placeholder="Search Allergies"></app-mini-search>
+          <div class="allergies-checkboxes">
+            <signup-checkbox checkbox-label="life" checkbox-name="life" checkbox-value="1" />
+            <signup-checkbox checkbox-label="carrot" checkbox-name="carrot" checkbox-value="1" />
+            <signup-checkbox checkbox-label="cake" checkbox-name="cake" checkbox-value="1" />
+          </div>
+        </div>
+      </div>
+      <div class="button-place">
+        <app-button [button-variant]="1" >Next</app-button>
+      </div>
+    </div>
+  </form>
+</div>

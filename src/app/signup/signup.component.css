@@ -1,0 +1,72 @@
+.signup-wrapper{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("/assets/backg.png");
+  background-repeat: no-repeat;
+  background-position: 0;
+  background-size: cover;
+}
+
+.signup-paper{
+  color: white;
+  background-color: var(--grey);
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-bottom: 30px;
+  padding-top: none;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.allergies{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.allergies-checkboxes{
+  width: 300px;
+  flex-wrap: wrap;
+  display: flex;
+  max-height: 130px;
+  min-height: 130px;
+  overflow-y: auto;
+  padding-left: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  gap: 10px;
+}
+
+.allergies-checkboxes-wrapper{
+  background-color: white;
+  padding-top: 10px;
+  border-radius: 6px;
+}
+
+.button-place{
+  display: flex;
+  justify-content: end;
+}
+
+.sex{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sex select{
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 4.5px;
+  padding-bottom: 4.5px;
+}
+
+.logo-part{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
