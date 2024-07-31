@@ -17,8 +17,7 @@ export class SigninComponent {
   constructor(private formBuilder:FormBuilder, private signinService:SigninService ){
   }
   userInput= this.formBuilder.group<SigninUser>({email:"",password:""})
-  handleSubmit(event:Event){
-    event.preventDefault()
+  handleSubmit(){
     this.signinService.signin(this.userInput.value)
   }
 }

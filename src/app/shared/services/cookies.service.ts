@@ -1,12 +1,13 @@
-import { Injectable } from '@angular/core';
-import { environement } from './environnement';
+import { Inject, Injectable } from '@angular/core';
+import { environement } from '../../environnement';
+import { DOCUMENT } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CookiesService {
   private name:string = "";
-  constructor(private document: Document) {
+  constructor(@Inject(DOCUMENT)private document: Document) {
     this.name = environement.cookieIdentifier;
   }
 

@@ -1,3 +1,8 @@
-<button [type]="type" type="" class="padding-button border-button" [ngClass]="{'primary-button' : variant === 0, 'secondary-button' : variant === 1}" (click)=" handleClick && handleClick($event)">
+<button
+  [type]="type"
+  class="padding-button border-button"
+  [ngClass]="{'primary-button' : variant === 0, 'secondary-button' : variant === 1}"
+  (click)="handleClick && handleClick($event)"
+>
   <ng-content></ng-content>
 </button>

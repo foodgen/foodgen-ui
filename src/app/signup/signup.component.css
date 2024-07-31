@@ -18,17 +18,18 @@
   padding-top: none;
   border-radius: 10px;
   display: flex;
+  width: 400px;
   flex-direction: column;
   gap: 20px;
 }
 
-.allergies{
+.allergies, .preferences{
   display: flex;
   flex-direction: column;
   gap: 5px;
 }
 
-.allergies-checkboxes{
+.checkboxes{
   width: 300px;
   flex-wrap: wrap;
   display: flex;
@@ -41,7 +42,7 @@
   gap: 10px;
 }
 
-.allergies-checkboxes-wrapper{
+.checkboxes-wrapper{
   background-color: white;
   padding-top: 10px;
   border-radius: 6px;

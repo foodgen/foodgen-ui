@@ -1,4 +1,4 @@
 <label class="checkbox-wrapper checkbox-shadow" [ngClass]="{'checked': checked}" [htmlFor]="name + '_id_' + value">
   <span>{{label}}</span>
-  <input type="checkbox"  (input)="handleInput($event)" [name]="name" [defaultChecked]="false" [value]="value" [id]="name + '_id_' + value">
+  <input type="checkbox" (input)="handleInput($event);" [name]="name" [defaultChecked]="false" [value]="value" [id]="name + '_id_' + value">
 </label>

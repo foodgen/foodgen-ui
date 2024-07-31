@@ -10,8 +10,11 @@ import { ReactiveFormsModule, FormGroup, FormControl } from '@angular/forms';
   styleUrl: './input.component.css'
 })
 export class InputComponent {
-  @Input("label")
+  @Input("input-label")
   label:string = ""
+
+  @Input("input-type")
+  type:"text" | "password" = "text"
 
   @Input("input-formControl")
   formControl: FormControl | null = null;

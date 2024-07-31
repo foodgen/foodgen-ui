@@ -19,7 +19,10 @@ export class CheckboxComponent {
   label:string=""
 
   checked = false
+  @Input("checkbox-handleChoose")
+  handleChoose?:(name:string)=>void;
   handleInput(event: Event){
+    if(this.handleChoose) this.handleChoose(this.value);
     const ref = event.target as HTMLInputElement
     console.log(ref.checked)
     if(ref.checked){
