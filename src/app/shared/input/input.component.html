@@ -1,4 +1,6 @@
 <div class="text-input">
   <span>{{label}}</span>
-  <input type="text">
+  <span *ngIf="formControl" class="input-wrapper" >
+    <input type="text" [formControl]="formControl">
+  </span>
 </div>

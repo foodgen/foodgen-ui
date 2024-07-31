@@ -1,0 +1,16 @@
+<div class="signup-wrapper">
+  <form (submit)="handleSubmit($event)" method="post" [formGroup]="userInput">
+    <div class="signup-paper">
+      <div class="logo-part">
+        <img src="/assets/logo.png" alt="logo" height="80px" width="80px" />
+      </div>
+      <span class="title">Sign in</span>
+      <app-input label="Email" [input-formControl]="userInput.get('email') | castToFormcontrol"></app-input>
+      <app-input label="Username" [input-formControl]="userInput.get('password') | castToFormcontrol"></app-input>
+        <div class="button-place">
+          <app-button [button-variant]="1" button-type="submit">Next</app-button>
+        </div>
+    </div>
+  </form>
+</div>
+

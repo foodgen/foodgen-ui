@@ -8,3 +8,7 @@
   padding: 4px;
   border-radius: 6px;
 }
+
+.input-wrapper input{
+  width:96%;
+}

@@ -1,0 +1,30 @@
+<div class="signup-wrapper">
+  <form (submit)="handleSubmit($event)" method="post" [formGroup]="createUserStepOneFormGroup">
+    <div class="signup-paper">
+      <div class="logo-part">
+        <img src="/assets/logo.png" alt="logo" height="80px" width="80px" />
+      </div>
+      <app-input label="Email" [input-formControl]="createUserStepOneFormGroup.get('email') | castToFormcontrol"></app-input>
+      <app-input label="Username" [input-formControl]="createUserStepOneFormGroup.get('username') | castToFormcontrol"></app-input>
+        <div class="sex">
+          <span>Sex</span>
+          <select name="" id="" formControlName="sex">
+            <option value="H">Homme</option>
+            <option value="F">Femme</option>
+          </select>
+        </div>
+        <div class="allergies">
+          <div>Do you have allergies ?</div>
+          <div class="allergies-checkboxes-wrapper">
+            <app-mini-search mini-search-placeholder="Search Allergies"></app-mini-search>
+            <div class="allergies-checkboxes" *ngFor="let allergie of allergies" >
+              <signup-checkbox checkbox-label="{{allergie.name}}" checkbox-name="{{allergie.name}}" checkbox-value="{{allergie.id}}" />
+            </div>
+          </div>
+        </div>
+        <div class="button-place">
+          <app-button [button-variant]="1">Next</app-button>
+        </div>
+    </div>
+  </form>
+</div>

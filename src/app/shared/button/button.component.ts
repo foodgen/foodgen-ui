@@ -11,9 +11,9 @@ import { NgClass } from '@angular/common';
 })
 export class ButtonComponent {
   @Input("handleClick")
-  handleClick:(...arg:any) => void = () => {
-    console.log("no click event implemented")
-  }
+  handleClick?:(...arg:any) => void;
+  @Input("button-type")
+  type: "submit" | "button" | "menu" | "reset" = "submit"
 
   @Input("button-variant")
   variant:ButtonVariants = ButtonVariants.primary

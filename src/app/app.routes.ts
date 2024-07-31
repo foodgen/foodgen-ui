@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
-import { SignupComponent } from './signup/signup.component';
 
 export const routes: Routes = [
-  {path:"signup", component:SignupComponent}
+  {path:"signup", loadChildren: () => import('./signup/signup.module').then(_=>_.SignupModule)},
+  {path:"random-meals", loadChildren: () => import('./random-meals/random-meals.module').then(_=>_.RandomMealsModule)},
+  {path:"signin", loadChildren: () => import('./signin/signin.module').then(_=>_.SigninModule)}
 ];
