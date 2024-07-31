@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --orange: rgb(253, 180, 45);
+  --grey: rgba(27, 27, 27, 0.572);
+  --green: rgb(33, 214, 16);
+  font-family: sans-serif;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+}

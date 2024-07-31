@@ -1,0 +1,30 @@
+@keyframes focus-in{
+  from{
+    border-bottom: 1px solid rgb(187, 187, 187);
+  }
+  to{
+    border-bottom: 1px solid rgb(71, 71, 71);
+  }
+}
+
+.mini-search input{
+  outline:none;
+  border: none;
+}
+
+.mini-search{
+  padding-left: 5px;
+}
+
+.blur{
+  animation-name: focus-in;
+  animation-direction: reverse;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}
+
+.focus{
+  animation-name: focus-in;
+  animation-fill-mode: forwards;
+  animation-duration: 1s;
+}

@@ -1,5 +1,7 @@
 # FoodgenUi
 
+Generate food with one click, configure your preferences, and get access to a massive database containing food recipe based by the region you are in
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.2.
 
 ## Development server

@@ -1,0 +1,19 @@
+.checkbox-wrapper{
+  background-color: white;
+  border: 1px solid var(--orange);
+  color: black;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 4.5px;
+  padding-bottom: 4.5px;
+  border-radius: 4px;
+}
+
+.checkbox-shadow{
+  box-shadow: 1px 2px 1px rgb(124, 124, 124);
+}
+
+.checked{
+  background-color: var(--orange);
+  color: black;
+}
