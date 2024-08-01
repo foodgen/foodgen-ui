@@ -1,0 +1,17 @@
+<div>
+  <app-input input-label="Email"
+    [input-formControl]="createUserSignupFormGroup.get('email') | castToFormcontrol"></app-input>
+  <app-input input-label="Username"
+    [input-formControl]="createUserSignupFormGroup.get('username') | castToFormcontrol"></app-input>
+  <app-input input-label="Firstname"
+    [input-formControl]="createUserSignupFormGroup.get('firstname') | castToFormcontrol"></app-input>
+  <app-input input-label="Lastname"
+    [input-formControl]="createUserSignupFormGroup.get('lastname') | castToFormcontrol"></app-input>
+  <div class="sex">
+    <span>Sex</span>
+    <select name="" id="" [formControl]="createUserSignupFormGroup.get('sex') | castToFormcontrol">
+      <option [defaultSelected] value="H">Homme</option>
+      <option value="F">Femme</option>
+    </select>
+  </div>
+</div>
