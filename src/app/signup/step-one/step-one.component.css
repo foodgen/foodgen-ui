@@ -1,0 +1,12 @@
+.sex{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sex select{
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 4.5px;
+  padding-bottom: 4.5px;
+}

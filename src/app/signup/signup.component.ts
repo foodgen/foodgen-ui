@@ -5,11 +5,15 @@ import { ButtonComponent } from '../shared/button/button.component';
 import { FormGroup, ReactiveFormsModule, FormBuilder } from '@angular/forms';
 import { CreateUserSignup } from './CreateUserSignup.type';
 import { catchError } from 'rxjs';
+import { NgIf } from '@angular/common';
+import { StepOneComponent } from "./step-one/step-one.component";
+import { StepThreeComponent } from "./step-three/step-three.component";
+import { StepTwoComponent } from "./step-two/step-two.component";
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [ReactiveFormsModule, ButtonComponent],
+  imports: [ReactiveFormsModule, ButtonComponent, NgIf, StepOneComponent, StepThreeComponent, StepTwoComponent],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css',
 })
@@ -19,6 +23,9 @@ export class SignupComponent implements OnInit {
   choosedPreferences: string[] = [];
   allergies: string[] = [];
   preferences: string[] = [];
+  step = 0
+
+
   handleSubmit(){
     this.signupService.signup(
       {
@@ -46,7 +53,22 @@ export class SignupComponent implements OnInit {
     }
   }
 
+  handleNext(){
+    if(this.step === 2){
+      return;
+    }
+    this.step += 1
+  }
+
+  handleReturn(){
+    if(this.step === 0){
+      return;
+    }
+    this.step -= 1
+  }
+
   ngOnInit(): void {
+    console.log(this.step)
     const ingredientsObservable = this.ingredientsService.getAllIngredients();
     ingredientsObservable
       .pipe(
@@ -75,4 +97,8 @@ export class SignupComponent implements OnInit {
       username: '',
     });
   }
+}
+
+export enum Steps{
+  stepOne, stepTwo, stepThree
 }

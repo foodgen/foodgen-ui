@@ -1,4 +1,4 @@
-<div>
+<div [ngClass]="{'show':showed == 0, 'hidden': showed != 0 }" >
   <app-input input-label="Email"
     [input-formControl]="createUserSignupFormGroup.get('email') | castToFormcontrol"></app-input>
   <app-input input-label="Username"
