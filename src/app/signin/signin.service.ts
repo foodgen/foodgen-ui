@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { SigninUser } from './SigninUser.type';
+import { SigninUser } from '../@types/SigninUser.type';
 import { HttpClient } from '@angular/common/http';
 import { environement } from '../environnement';
 import { CookiesService } from '../shared/services/cookies.service';

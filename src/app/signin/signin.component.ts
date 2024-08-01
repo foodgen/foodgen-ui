@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, ReactiveFormsModule } from '@angular/forms';
 import { SigninService } from './signin.service';
-import { SigninUser } from './SigninUser.type';
+import { SigninUser } from '../@types/SigninUser.type';
 import { InputComponent } from '../shared/input/input.component';
 import { CastToFormcontrolPipe } from '../shared/cast-to-formcontrol/cast-to-formcontrol.pipe';
 import { ButtonComponent } from '../shared/button/button.component';

@@ -1,4 +1,4 @@
-import { CreateUserSignup } from './CreateUserSignup.type';
+import { CreateUserSignup } from '../@types/CreateUserSignup.type';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environement } from '../environnement';

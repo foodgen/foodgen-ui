@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { SignupService } from './signup.service';
 import { ButtonComponent } from '../shared/button/button.component';
 import { FormGroup, ReactiveFormsModule, FormBuilder } from '@angular/forms';
-import { CreateUserSignup } from './CreateUserSignup.type';
+import { CreateUserSignup } from '../@types/CreateUserSignup.type';
 import { catchError } from 'rxjs';
 import { NgIf } from '@angular/common';
 import { StepOneComponent } from "./step-one/step-one.component";
