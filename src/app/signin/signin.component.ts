@@ -5,11 +5,18 @@ import { SigninUser } from './SigninUser.type';
 import { InputComponent } from '../shared/input/input.component';
 import { CastToFormcontrolPipe } from '../shared/cast-to-formcontrol/cast-to-formcontrol.pipe';
 import { ButtonComponent } from '../shared/button/button.component';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
   standalone: true,
-  imports: [ReactiveFormsModule, InputComponent, CastToFormcontrolPipe, ButtonComponent],
+  imports: [
+    ReactiveFormsModule,
+    InputComponent,
+    CastToFormcontrolPipe,
+    ButtonComponent,
+    RouterModule
+  ],
   templateUrl: './signin.component.html',
   styleUrl: './signin.component.css'
 })

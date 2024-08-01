@@ -34,6 +34,9 @@
           <app-button [button-variant]="1" [button-type]="step === 2 ? 'submit':'button'" [handleClick]="handleNext.bind(this)">{{step === 2 ? 'submit' : 'next'}}</app-button>
         </div>
       </div>
+      <div>
+        <a href="/" [routerLink]="['/signin']" >already have an account ?</a>
+      </div>
     </div>
   </form>
 </div>

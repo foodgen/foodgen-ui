@@ -9,11 +9,20 @@ import { NgIf } from '@angular/common';
 import { StepOneComponent } from "./step-one/step-one.component";
 import { StepThreeComponent } from "./step-three/step-three.component";
 import { StepTwoComponent } from "./step-two/step-two.component";
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
   standalone: true,
-  imports: [ReactiveFormsModule, ButtonComponent, NgIf, StepOneComponent, StepThreeComponent, StepTwoComponent],
+  imports: [
+    ReactiveFormsModule,
+    ButtonComponent,
+    NgIf,
+    StepOneComponent,
+    StepThreeComponent,
+    StepTwoComponent,
+    RouterModule
+  ],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css',
 })

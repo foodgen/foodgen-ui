@@ -3,8 +3,10 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow-y: scroll;
   background-image: url("/assets/backg.png");
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: 0;
   background-size: cover;
 }
@@ -14,7 +16,7 @@
   background-color: var(--grey);
   padding-left: 30px;
   padding-right: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   padding-top: none;
   border-radius: 10px;
   display: flex;
