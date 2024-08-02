@@ -1,5 +1,4 @@
-import { Component, Input, ViewChildren } from '@angular/core';
-import { ButtonVariants } from './button.types';
+import { Component, Input } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -11,11 +10,11 @@ import { NgClass } from '@angular/common';
 })
 export class ButtonComponent {
   @Input("handleClick")
-  handleClick?:(...arg:any) => void;
+  handleClick?:() => void;
 
   @Input("button-type")
   type: "submit" | "button" | "menu" | "reset" = "submit"
 
   @Input("button-variant")
-  variant:ButtonVariants = ButtonVariants.primary
+  variant:"primary" | "secondary" = "primary"
 }

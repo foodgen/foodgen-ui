@@ -3,8 +3,10 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
+  overflow-y: scroll;
   background-image: url("/assets/backg.png");
   background-repeat: no-repeat;
+  background-attachment: fixed;
   background-position: 0;
   background-size: cover;
 }
@@ -14,13 +16,18 @@
   background-color: var(--grey);
   padding-left: 30px;
   padding-right: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 10px;
   padding-top: none;
   border-radius: 10px;
   display: flex;
   width: 400px;
   flex-direction: column;
   gap: 20px;
+}
+
+.button-place{
+  display: flex;
+  justify-content: space-between;
 }
 
 .allergies, .preferences{
@@ -70,4 +77,9 @@
   display: flex;
   width: 100%;
   justify-content: center;
+}
+
+.title{
+  font-size: x-large;
+  font-family: sans-serif;
 }

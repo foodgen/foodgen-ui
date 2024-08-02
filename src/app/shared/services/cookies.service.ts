@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { environement } from '../../environnement';
+import { environement } from '../../../environments/environment';
 import { DOCUMENT } from '@angular/common';
 
 @Injectable({
@@ -20,6 +20,7 @@ export class CookiesService {
 
   getCookie(){
     const token = this.document.cookie;
+    console.log("from token")
     if(token.length === 0){
       return;
     }

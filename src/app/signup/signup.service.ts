@@ -1,7 +1,7 @@
-import { CreateUserSignup } from './CreateUserSignup.type';
+import { CreateUserSignup } from '../@types/CreateUserSignup.type';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environement } from '../environnement';
+import { environement } from '../../environments/environment';
 import { from, Observable } from 'rxjs';
 import { CookiesService } from '../shared/services/cookies.service';
 
@@ -14,8 +14,6 @@ export class SignupService {
   }
 
   signup(createUserSignup:Partial<CreateUserSignup>){
-    console.log(createUserSignup)
-    const tokenObservable = this.client.post(environement.apiURL + "/users/signup", createUserSignup) as Observable<string>
-    tokenObservable.subscribe(token=>{this.cookiesService.setCookie(token)})
+    return from(this.client.post(environement.apiURL + "/users/signup", createUserSignup)) as Observable<string>
   }
 }

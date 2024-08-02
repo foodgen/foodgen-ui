@@ -4,12 +4,15 @@
       <div class="logo-part">
         <img src="/assets/logo.png" alt="logo" height="80px" width="80px" />
       </div>
-      <span class="title">Sign in</span>
+      <span class="title">SignIn</span>
       <app-input input-label="Email" [input-formControl]="userInput.get('email') | castToFormcontrol"></app-input>
       <app-input input-label="Username" [input-formControl]="userInput.get('password') | castToFormcontrol"></app-input>
         <div class="button-place">
-          <app-button [button-variant]="1" button-type="submit">Next</app-button>
+          <app-button button-variant="secondary" button-type="submit">submit</app-button>
         </div>
+      <div>
+        <a href="/signup" >don't have an account ?</a>
+      </div>
     </div>
   </form>
 </div>

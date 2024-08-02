@@ -1,24 +1,53 @@
-import { Component } from '@angular/core';
-import { RandomMealsService } from './services/random-meals.service';
+import { Component, OnInit } from '@angular/core';
+import { RandomMealsService } from './random-meals.service';
+import { catchError } from 'rxjs';
+import { Meal } from '../@types/Meal.type';
+import { FoodSectionComponent } from "./food-section/food-section.component";
+import { SidebarComponent } from '../shared/sidebar/sidebar.component';
+import { ButtonComponent } from "../shared/button/button.component";
+import { NgFor } from '@angular/common';
+import { AuthComponent } from "../auth/auth.component";
 import { RecipesService } from './services/recipes.service';
 
 @Component({
   selector: 'app-random-meals',
   standalone: true,
-  imports: [],
+  imports: [
+    RandomMealsComponent,
+    FoodSectionComponent,
+    NgFor,
+    SidebarComponent,
+    ButtonComponent,
+    AuthComponent
+],
   templateUrl: './random-meals.component.html',
   styleUrl: './random-meals.component.css'
 })
-export class RandomMealsComponent {
-  constructor(private randomMealsService:RandomMealsService, private recipesService: RecipesService){
-
+export class RandomMealsComponent implements OnInit{
+  randomMeals: Meal[] = []
+  ngOnInit(): void {
+    this.randomMealsService.getRandomMeals()
+      .pipe(
+        catchError((err)=>{
+          return [];
+        })
+      ).subscribe(meals=>{
+        this.randomMeals = meals
+      })
   }
-  handleGetRandom(){
-    //TODO: please implement getting randomMeal from backend
+
+  handleClickRegenerate(){
+    this.randomMealsService.getRandomMeals()
+      .pipe(
+        catchError((err)=>{
+          return [];
+        })
+      ).subscribe(meals=>{
+        this.randomMeals = meals
+      })
   }
 
-  handleGetRecipe(){
-    //TODO: please implement getting a list of recipes
+  constructor(private randomMealsService:RandomMealsService){
   }
 
 }

@@ -1,7 +1,9 @@
+import { AboutMeComponent } from './../about-me/about-me.component';
+import { from, Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { SigninUser } from './SigninUser.type';
+import { SigninUser } from '../@types/SigninUser.type';
 import { HttpClient } from '@angular/common/http';
-import { environement } from '../environnement';
+import { environement } from '../../environments/environment';
 import { CookiesService } from '../shared/services/cookies.service';
 
 @Injectable({
@@ -9,10 +11,10 @@ import { CookiesService } from '../shared/services/cookies.service';
 })
 export class SigninService {
 
-  constructor(private client: HttpClient, private cookiesService: CookiesService){
+  constructor(private client: HttpClient){
   }
   signin(inputs: Partial<SigninUser>){
     //TODO: implement signin provider from api
-    this.client.post(environement.apiURL, {...inputs})
+    return from(this.client.post(environement.apiURL + "/users/login", {...inputs})) as Observable<string>
   }
 }

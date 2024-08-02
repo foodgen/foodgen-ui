@@ -1,0 +1,4 @@
+<div [ngClass]="{'show':showed == 2, 'hidden': showed != 2 }">
+  <app-input input-type="password" input-label="Password"
+    [input-formControl]="createUserSignupFormGroup.get('password') | castToFormcontrol"></app-input>
+</div>

@@ -1,0 +1,22 @@
+<div [ngClass]="{'show':showed == 1, 'hidden': showed != 1 }">
+  <div class="allergies">
+    <div>Do you have allergies ?</div>
+    <div class="checkboxes-wrapper">
+      <app-mini-search mini-search-placeholder="Search Allergies"></app-mini-search>
+      <div class="checkboxes" *ngFor="let allergie of allergies">
+        <signup-checkbox [checkbox-handleChoose]="handleChooseAllergie" checkbox-label="{{allergie}}"
+          checkbox-name="{{allergie}}" checkbox-value="{{allergie}}" />
+      </div>
+    </div>
+    <div class="preferences">
+      <div>Any preferences ?</div>
+      <div class="checkboxes-wrapper">
+        <app-mini-search mini-search-placeholder="Search preference"></app-mini-search>
+        <div class="checkboxes" *ngFor="let preference of preferences">
+          <signup-checkbox [checkbox-handleChoose]="handleChoosePreference" checkbox-label="{{preference}}"
+            checkbox-name="{{preference}}" checkbox-value="{{preference}}" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

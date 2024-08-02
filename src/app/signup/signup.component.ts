@@ -1,76 +1,97 @@
+import { CookiesService } from './../shared/services/cookies.service';
 import { IngredientsService } from './../shared/services/ingredients.service';
 import { Component, OnInit } from '@angular/core';
 import { SignupService } from './signup.service';
-import { InputComponent } from '../shared/input/input.component';
-import { CheckboxComponent } from "../shared/checkbox/checkbox.component";
-import { ButtonComponent } from "../shared/button/button.component";
-import { MiniSearchComponent } from "../shared/mini-search/mini-search.component";
-import { FormControl, FormGroup, ReactiveFormsModule, Validators, FormBuilder } from '@angular/forms';
-import { CreateUserSignup } from './CreateUserSignup.type';
-import { CastToFormcontrolPipe } from '../shared/cast-to-formcontrol/cast-to-formcontrol.pipe';
-import { NgFor, NgIf } from '@angular/common';
+import { ButtonComponent } from '../shared/button/button.component';
+import { FormGroup, ReactiveFormsModule, FormBuilder } from '@angular/forms';
+import { CreateUserSignup } from '../@types/CreateUserSignup.type';
 import { catchError } from 'rxjs';
+import { NgIf } from '@angular/common';
+import { StepOneComponent } from "./step-one/step-one.component";
+import { StepThreeComponent } from "./step-three/step-three.component";
+import { StepTwoComponent } from "./step-two/step-two.component";
+import { RouterModule } from '@angular/router';
+import { AuthComponent } from "../auth/auth.component";
 
 @Component({
   selector: 'app-signup',
   standalone: true,
   imports: [
-    InputComponent,
-    CheckboxComponent,
-    ButtonComponent,
-    MiniSearchComponent,
-    NgFor,
-    NgIf,
     ReactiveFormsModule,
-    CastToFormcontrolPipe
-  ],
+    ButtonComponent,
+    NgIf,
+    StepOneComponent,
+    StepThreeComponent,
+    StepTwoComponent,
+    RouterModule,
+    AuthComponent
+],
   templateUrl: './signup.component.html',
-  styleUrl: './signup.component.css'
+  styleUrl: './signup.component.css',
 })
 export class SignupComponent implements OnInit {
-  constructor(
-    private signupService:SignupService,
-    private formBuilder:FormBuilder,
-    private ingredientsService:IngredientsService
-  ){ }
+  createUserSignupFormGroup: FormGroup;
+  choosedAllergies: string[] = [];
+  choosedPreferences: string[] = [];
+  allergies: string[] = [];
+  preferences: string[] = [];
+  step = 0
+  // signupDone : boolean = false;
 
-  createUserSignupFormGroup = this.formBuilder.group<CreateUserSignup>({
-    email:"",
-    firstname:"",
-    lastname:"",
-    password:"",
-    sex:"H",
-    username:""
-  })
-  choosedAllergies:string[] = []
-  choosedPreferences:string[] = []
-  allergies:string[] = []
-  preferences:string[] = []
-  handleChooseAllergie(name:string){
-    const index = this.choosedAllergies.findIndex((value) => value = name)
-    if(index < 0){
-      this.choosedAllergies.push(name)
-    }else{
-      this.choosedAllergies.splice(index, 0)
-    }
+  handleSubmit(){
+    this.signupService.signup(
+      {
+        allergies: this.choosedAllergies,
+        preferences: this.choosedPreferences,
+        ...this.createUserSignupFormGroup.value
+      }
+    ).pipe(
+      catchError(()=>{
+        return ""
+      })
+    ).subscribe(token => {
+      this.cookiesService.setCookie(token)
+    })
   }
-  handleChoosePreference(name:string){
-    const index = this.choosedPreferences.findIndex((value) => value = name)
-    if(index < 0){
-      this.choosedPreferences.push(name)
-    }else{
-      this.choosedPreferences.splice(index, 0)
+  handleChoosePreference(name: string) {
+    const index = this.choosedPreferences.findIndex((value) => (value = name));
+    if (index < 0) {
+      this.choosedPreferences.push(name);
+    } else {
+      this.choosedPreferences.splice(index, 0);
     }
   }
 
+  handleChooseAllergies(name: string) {
+    const index = this.choosedAllergies.findIndex((value) => (value = name));
+    if (index < 0) {
+      this.choosedAllergies.push(name);
+    } else {
+      this.choosedAllergies.splice(index, 0);
+    }
+  }
 
+  handleNext(){
+    if(this.step === 2){
+      return;
+    }
+    this.step += 1
+  }
+
+  handleReturn(){
+    if(this.step === 0){
+      return;
+    }
+    this.step -= 1
+  }
 
   ngOnInit(): void {
-    const ingredientsObservable = this.ingredientsService.getAllIngredients()
+    console.log(this.step)
+    const ingredientsObservable = this.ingredientsService.getAllIngredients();
     ingredientsObservable
       .pipe(
-        catchError(err =>{
-          console.log("I think it's a bad API link erro")
+        catchError((err) => {
+          console.log("I think it's a bad API link erro");
           return [];
         })
       )
@@ -80,7 +101,23 @@ export class SignupComponent implements OnInit {
       });
   }
 
-  handleSubmit(){
-    this.signupService.signup({...this.choosedAllergies, ...this.choosedPreferences,...this.createUserSignupFormGroup.value} as CreateUserSignup);
+  constructor(
+    private signupService: SignupService,
+    private formBuilder: FormBuilder,
+    private ingredientsService: IngredientsService,
+    private cookiesService:CookiesService
+  ) {
+    this.createUserSignupFormGroup = this.formBuilder.group<CreateUserSignup>({
+      email: '',
+      firstname: '',
+      lastname: '',
+      password: '',
+      sex: 'H',
+      username: '',
+    });
   }
+}
+
+export enum Steps{
+  stepOne, stepTwo, stepThree
 }
