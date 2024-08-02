@@ -2,7 +2,7 @@
   [type]="type"
   class="padding-button border-button"
   [ngClass]="{'primary-button' : variant === 'primary', 'secondary-button' : variant === 'secondary'}"
-  (click)="invokeHandleClick()"
+  (click)="handleClick && handleClick()"
 >
   <ng-content></ng-content>
 </button>

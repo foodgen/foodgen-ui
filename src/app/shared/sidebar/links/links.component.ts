@@ -18,7 +18,11 @@ export class LinksComponent {
     },
     {
       name: 'about me',
-      to:'user-room'
+      to:'about-me'
+    },
+    {
+      name: 'random meal',
+      to:'random-meals'
     }
   ];
 }

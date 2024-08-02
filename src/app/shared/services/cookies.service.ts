@@ -20,6 +20,7 @@ export class CookiesService {
 
   getCookie(){
     const token = this.document.cookie;
+    console.log("from token")
     if(token.length === 0){
       return;
     }

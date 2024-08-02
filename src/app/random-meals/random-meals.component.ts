@@ -6,6 +6,7 @@ import { FoodSectionComponent } from "./food-section/food-section.component";
 import { SidebarComponent } from '../shared/sidebar/sidebar.component';
 import { ButtonComponent } from "../shared/button/button.component";
 import { NgFor } from '@angular/common';
+import { AuthComponent } from "../auth/auth.component";
 
 @Component({
   selector: 'app-random-meals',
@@ -15,7 +16,8 @@ import { NgFor } from '@angular/common';
     FoodSectionComponent,
     NgFor,
     SidebarComponent,
-    ButtonComponent
+    ButtonComponent,
+    AuthComponent
 ],
   templateUrl: './random-meals.component.html',
   styleUrl: './random-meals.component.css'

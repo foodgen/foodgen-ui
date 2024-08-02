@@ -11,6 +11,7 @@ import { StepOneComponent } from "./step-one/step-one.component";
 import { StepThreeComponent } from "./step-three/step-three.component";
 import { StepTwoComponent } from "./step-two/step-two.component";
 import { RouterModule } from '@angular/router';
+import { AuthComponent } from "../auth/auth.component";
 
 @Component({
   selector: 'app-signup',
@@ -22,8 +23,9 @@ import { RouterModule } from '@angular/router';
     StepOneComponent,
     StepThreeComponent,
     StepTwoComponent,
-    RouterModule
-  ],
+    RouterModule,
+    AuthComponent
+],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css',
 })
