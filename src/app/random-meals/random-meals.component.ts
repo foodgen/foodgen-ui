@@ -7,6 +7,7 @@ import { SidebarComponent } from '../shared/sidebar/sidebar.component';
 import { ButtonComponent } from "../shared/button/button.component";
 import { NgFor } from '@angular/common';
 import { AuthComponent } from "../auth/auth.component";
+import { RecipesService } from './services/recipes.service';
 
 @Component({
   selector: 'app-random-meals',
@@ -47,7 +48,6 @@ export class RandomMealsComponent implements OnInit{
   }
 
   constructor(private randomMealsService:RandomMealsService){
-
   }
 
 }
