@@ -1,3 +1,4 @@
+import { CookiesService } from './../shared/services/cookies.service';
 import { IngredientsService } from './../shared/services/ingredients.service';
 import { Component, OnInit } from '@angular/core';
 import { SignupService } from './signup.service';
@@ -33,7 +34,7 @@ export class SignupComponent implements OnInit {
   allergies: string[] = [];
   preferences: string[] = [];
   step = 0
-
+  // signupDone : boolean = false;
 
   handleSubmit(){
     this.signupService.signup(
@@ -42,7 +43,13 @@ export class SignupComponent implements OnInit {
         preferences: this.choosedPreferences,
         ...this.createUserSignupFormGroup.value
       }
-    )
+    ).pipe(
+      catchError(()=>{
+        return ""
+      })
+    ).subscribe(token => {
+      this.cookiesService.setCookie(token)
+    })
   }
   handleChoosePreference(name: string) {
     const index = this.choosedPreferences.findIndex((value) => (value = name));
@@ -95,7 +102,8 @@ export class SignupComponent implements OnInit {
   constructor(
     private signupService: SignupService,
     private formBuilder: FormBuilder,
-    private ingredientsService: IngredientsService
+    private ingredientsService: IngredientsService,
+    private cookiesService:CookiesService
   ) {
     this.createUserSignupFormGroup = this.formBuilder.group<CreateUserSignup>({
       email: '',

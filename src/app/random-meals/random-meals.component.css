@@ -1,0 +1,32 @@
+.random-meals{
+  position:relative;
+  width: 75%;
+}
+
+.random-meals-wrapper{
+  height: 100vh;
+  color: white;
+  overflow-y: auto;
+  background-image: url(/assets/backg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media screen and (max-width:500px) {
+  .random-meals-wrapper {
+    width: 100%;
+  }
+}
+
+.regenerate{
+  position: fixed;
+  right: 310px;
+  bottom: 20px;
+}
+
+.overlay{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(19, 18, 18, 0.438);
+}

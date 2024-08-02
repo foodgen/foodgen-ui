@@ -1,0 +1,35 @@
+<div class="food-section-wrapper">
+  <div class="food-section">
+    <div class="up-part">
+      <div class="photo">
+        <img [src]="meal?.image" width="200px" height="200px" alt="">
+      </div>
+    </div>
+    <div class="below-photo">
+      <div class="food-name">
+        <h2>{{meal?.name}}</h2>
+      </div>
+      <div class="btn-recipe">
+        <app-button button-variant="secondary">Download PDF</app-button>
+      </div>
+    </div>
+    <div class="region">
+      <img src="/assets/Dashboard/regions.png" height="30px" width="30px" alt="">
+      <b>
+        {{meal?.region?.name}}
+      </b>
+    </div>
+    <div class="down-part">
+      <div class="ingredients">
+        <h3>Ingredients</h3>
+        <ul>
+          <li *ngFor="let ingredient of meal?.recipe?.ingredients">{{ingredient.name}} : {{ingredient.measure}}</li>
+        </ul>
+      </div>
+      <div class="readme">
+        <h3>Instruction</h3>
+        {{meal?.recipe?.readme}}
+      </div>
+    </div>
+  </div>
+</div>

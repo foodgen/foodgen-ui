@@ -1,7 +1,7 @@
 <button
   [type]="type"
   class="padding-button border-button"
-  [ngClass]="{'primary-button' : variant === 0, 'secondary-button' : variant === 1}"
+  [ngClass]="{'primary-button' : variant === 'primary', 'secondary-button' : variant === 'secondary'}"
   (click)="invokeHandleClick()"
 >
   <ng-content></ng-content>

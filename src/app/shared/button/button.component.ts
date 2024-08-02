@@ -1,5 +1,4 @@
 import { Component, Input } from '@angular/core';
-import { ButtonVariants } from './button.types';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -17,7 +16,7 @@ export class ButtonComponent {
   type: "submit" | "button" | "menu" | "reset" = "submit"
 
   @Input("button-variant")
-  variant:ButtonVariants = ButtonVariants.primary
+  variant:"primary" | "secondary" = "primary"
   invokeHandleClick(){
     console.log("invoked")
     this.handleClick();

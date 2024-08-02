@@ -27,11 +27,11 @@
       <div class="button-place">
         <div>
           <ng-container *ngIf="step !== 0">
-            <app-button [button-variant]="1" button-type="button" [handleClick]="handleReturn.bind(this)">Return</app-button>
+            <app-button button-variant="secondary" button-type="button" [handleClick]="handleReturn.bind(this)">Return</app-button>
           </ng-container>
         </div>
         <div>
-          <app-button [button-variant]="1" [button-type]="step === 2 ? 'submit':'button'" [handleClick]="handleNext.bind(this)">{{step === 2 ? 'submit' : 'next'}}</app-button>
+          <app-button button-variant="secondary" [button-type]="step === 2 ? 'submit':'button'" [handleClick]="handleNext.bind(this)">{{step === 2 ? 'submit' : 'next'}}</app-button>
         </div>
       </div>
       <div>

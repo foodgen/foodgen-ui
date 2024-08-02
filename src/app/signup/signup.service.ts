@@ -14,8 +14,6 @@ export class SignupService {
   }
 
   signup(createUserSignup:Partial<CreateUserSignup>){
-    console.log(createUserSignup)
-    const tokenObservable = this.client.post(environement.apiURL + "/users/signup", createUserSignup) as Observable<string>
-    tokenObservable.subscribe(token=>{this.cookiesService.setCookie(token)})
+    return from(this.client.post(environement.apiURL + "/users/signup", createUserSignup)) as Observable<string>
   }
 }
