@@ -28,6 +28,8 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "^17.3.2",
+    "@angular-builders/custom-webpack": "18.0.0",
+    "@angular-builders/dev-server": "18.0.0",
     "@angular/cli": "^17.3.2",
     "@angular/compiler-cli": "^17.3.0",
     "@types/express": "^4.17.17",

@@ -1,5 +1,5 @@
 export const environement = {
   //TODO: configure .env
-  apiURL: 'https://noURL.com',
+  apiURL: process.env["API_URL"] || 'https://noURL.com',
   cookieIdentifier: "token"
 }
