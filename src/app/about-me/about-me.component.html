@@ -1,8 +1,49 @@
-<app-auth>
-  <div class="about-me-wrapper">
-    <div class="overlay"></div>
-    <div class="about-me">
-
+<!-- <app-auth> -->
+<div class="about-me-wrapper">
+  <div class="overlay overlay-custom"></div>
+  <div class="about-me">
+    <div class="return-btn">
+      <label for="return" class="return">
+        <input id="return" type="button" value="" hidden>
+        <span>
+          Return
+        </span>
+      </label>
+    </div>
+    <div class="up-part">
+      <div class="information-wrapper">
+        <div class="user-photo">
+          <img src="" alt="">
+        </div>
+        <div class="user-information">
+          <div class="name">Name + Firstname + Lastname</div>
+          <div class="username">Username</div>
+          <div class="username">emailgmail.com</div>
+        </div>
+      </div>
+    </div>
+    <div class="down-part">
+      <div class="allergies">
+        <div class="title">Allergies</div>
+        <div class="checkboxes-wrapper">
+          <app-mini-search mini-search-placeholder="Search Allergies"></app-mini-search>
+          <div class="checkboxes" *ngFor="let allergie of allergies">
+            <signup-checkbox [checkbox-handleChoose]="handleChooseAllergie" checkbox-label="{{allergie}}"
+              checkbox-name="{{allergie}}" checkbox-value="{{allergie}}" />
+          </div>
+        </div>
+      </div>
+      <div class="preferences">
+        <div class="title">Preferences</div>
+        <div class="checkboxes-wrapper">
+          <app-mini-search mini-search-placeholder="Search preference"></app-mini-search>
+          <div class="checkboxes" *ngFor="let preference of preferences">
+            <signup-checkbox [checkbox-handleChoose]="handleChoosePreference" checkbox-label="{{preference}}"
+              checkbox-name="{{preference}}" checkbox-value="{{preference}}" />
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-</app-auth>
+</div>
+<!-- </app-auth> -->

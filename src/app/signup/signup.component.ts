@@ -62,7 +62,7 @@ export class SignupComponent implements OnInit {
     }
   }
 
-  handleChooseAllergies(name: string) {
+  handleChooseAllergie(name: string) {
     const index = this.choosedAllergies.findIndex((value) => (value = name));
     if (index < 0) {
       this.choosedAllergies.push(name);
