@@ -16,7 +16,11 @@ export class AuthComponent implements OnInit{
   constructor(private authService:AuthService, private router:Router,private cookiesService:CookiesService){}
   user!:User;
   ngOnInit(): void {
-    const user = this.authService.whoami();
+    const token = this.cookiesService.getCookie();
+    let user;
+    if(token){
+      user = this.authService.whoami(token);
+    }
     if(!user){
       this.router.navigateByUrl("/signin")
     }else{

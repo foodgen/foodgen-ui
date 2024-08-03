@@ -1,5 +1,5 @@
 export const environement = {
   // Use Github secret instead of .env
-  apiURL: ${{ secrets.API_URL }},
+  apiURL: "https//nourl.com",
   cookieIdentifier: "token"
 }

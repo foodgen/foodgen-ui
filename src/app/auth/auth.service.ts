@@ -9,8 +9,7 @@ import { User } from '../@types/User.type';
   providedIn: 'root'
 })
 export class AuthService {
-  whoami(){
-    const token = this.cookiesService.getCookie();
+  whoami(token?:string){
     if (token && token.length !== 0) {
       return from(
         this.client.get<User | string>(environement.apiURL + "/users/whoami", {
@@ -24,5 +23,5 @@ export class AuthService {
     }
   }
 
-  constructor(private client:HttpClient, private cookiesService:CookiesService) { }
+  constructor(private client:HttpClient) { }
 }
