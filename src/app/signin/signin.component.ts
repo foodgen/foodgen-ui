@@ -45,6 +45,5 @@ export class SigninComponent {
         this.router.navigateByUrl("/random-meals")
       }
     })
-
   }
 }
