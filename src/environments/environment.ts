@@ -1,5 +1,5 @@
 export const environement = {
   // Use Github secret instead of .env
-  apiURL: "https://nourl.com",
+  apiURL: import.meta.env["NG_APP_API_URL"],
   cookieIdentifier: "token"
 }
