@@ -28,7 +28,7 @@ export class RouteProtectionService {
           if (user.toString().length === 0) {
             cookiesService.deleteCookie();
             this.router.navigateByUrl(redirectTo);
-            rej("no user recognized")
+            rej("no user with that ")
             return;
           } else {
             res(user as User)

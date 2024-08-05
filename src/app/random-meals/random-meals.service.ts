@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { environement } from '../environnement';
+import { environement } from '../../environments/environment';
 import { catchError, from, Observable } from 'rxjs';
 import { Meal } from '../@types/Meal.type';
 
