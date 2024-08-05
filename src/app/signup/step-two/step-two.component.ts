@@ -2,7 +2,6 @@ import { Component, Input } from '@angular/core';
 import { MiniSearchComponent } from '../../shared/mini-search/mini-search.component';
 import { NgClass, NgFor } from '@angular/common';
 import { CheckboxComponent } from '../../shared/checkbox/checkbox.component';
-import { Steps } from '../signup.component';
 
 @Component({
   selector: 'app-step-two',

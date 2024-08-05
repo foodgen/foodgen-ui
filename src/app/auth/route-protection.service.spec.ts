@@ -1,16 +1,15 @@
 import { TestBed } from '@angular/core/testing';
-
-import { SignupService } from './signup.service';
+import { RouteProtectionService } from './route-protection.service';
 import { HttpClientModule } from '@angular/common/http';
 
-describe('SignupService', () => {
-  let service: SignupService;
+describe('RouteProtectionService', () => {
+  let service: RouteProtectionService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports:[HttpClientModule]
     });
-    service = TestBed.inject(SignupService);
+    service = TestBed.inject(RouteProtectionService);
   });
 
   it('should be created', () => {

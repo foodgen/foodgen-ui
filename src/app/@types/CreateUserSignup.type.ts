@@ -1,5 +1,3 @@
-import { FormArray, FormControl } from "@angular/forms"
-
 export interface CreateUserSignup{
   firstname: string
   lastname: string
@@ -7,4 +5,6 @@ export interface CreateUserSignup{
   email: string
   sex: "H" | "F"
   password: string
+  preferences: string[]
+  allergies: string[]
 }

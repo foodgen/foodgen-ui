@@ -9,7 +9,11 @@ import { Meal } from '../@types/Meal.type';
 })
 export class RandomMealsService {
   constructor(private client:HttpClient) { }
-  getRandomMeals() : Observable<Meal[]>{
-    return from(this.client.get(environement.apiURL + "/meals")) as Observable<Meal[]>
+  getRandomMeals(token:string) : Observable<Meal[]>{
+    return from(this.client.get(environement.apiURL + "/meals",{
+      headers:{
+        "Authorisation":token
+      }
+    })) as Observable<Meal[]>
   }
 }

@@ -2,8 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { InputComponent } from '../../shared/input/input.component';
 import { CastToFormcontrolPipe } from '../../shared/cast-to-formcontrol/cast-to-formcontrol.pipe';
-import { NgClass } from '@angular/common';
-import { Steps } from '../signup.component';
+import { NgClass, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-step-one',
@@ -12,14 +11,15 @@ import { Steps } from '../signup.component';
     InputComponent,
     CastToFormcontrolPipe,
     ReactiveFormsModule,
-    NgClass
+    NgClass,
+    NgIf
   ],
   templateUrl: './step-one.component.html',
   styleUrl: './step-one.component.css'
 })
 export class StepOneComponent {
   @Input("step-one-createUserSignupFormGroupe")
-  createUserSignupFormGroup!: FormGroup;
+  createUserSignupFormGroup?: FormGroup;
   @Input("step-one-showed")
   showed: number = 0;
 }

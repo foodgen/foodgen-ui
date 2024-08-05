@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { RandomMealsComponent } from './random-meals.component';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('RandomMealsComponent', () => {
   let component: RandomMealsComponent;
@@ -8,10 +9,10 @@ describe('RandomMealsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [RandomMealsComponent]
+      imports: [RandomMealsComponent, HttpClientModule]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(RandomMealsComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

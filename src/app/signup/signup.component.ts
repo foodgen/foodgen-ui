@@ -4,14 +4,13 @@ import { Component, OnInit } from '@angular/core';
 import { SignupService } from './signup.service';
 import { ButtonComponent } from '../shared/button/button.component';
 import { FormGroup, ReactiveFormsModule, FormBuilder } from '@angular/forms';
-import { CreateUserSignup } from '../@types/CreateUserSignup.type';
 import { catchError } from 'rxjs';
 import { NgIf } from '@angular/common';
 import { StepOneComponent } from "./step-one/step-one.component";
 import { StepThreeComponent } from "./step-three/step-three.component";
 import { StepTwoComponent } from "./step-two/step-two.component";
 import { RouterModule } from '@angular/router';
-import { AuthComponent } from "../auth/auth.component";
+import { CreateUserSignupFormGroup } from './CreateUserSignupFormGroup.type';
 
 @Component({
   selector: 'app-signup',
@@ -24,7 +23,6 @@ import { AuthComponent } from "../auth/auth.component";
     StepThreeComponent,
     StepTwoComponent,
     RouterModule,
-    AuthComponent
 ],
   templateUrl: './signup.component.html',
   styleUrl: './signup.component.css',
@@ -54,20 +52,20 @@ export class SignupComponent implements OnInit {
     })
   }
   handleChoosePreference(name: string) {
-    const index = this.choosedPreferences.findIndex((value) => (value = name));
+    const index = this.choosedPreferences.findIndex((value) => (value === name));
     if (index < 0) {
       this.choosedPreferences.push(name);
     } else {
-      this.choosedPreferences.splice(index, 0);
+      this.choosedPreferences.splice(index, 1);
     }
   }
 
-  handleChooseAllergies(name: string) {
-    const index = this.choosedAllergies.findIndex((value) => (value = name));
+  handleChooseAllergie(name: string) {
+    const index = this.choosedAllergies.findIndex((value) => (value === name));
     if (index < 0) {
       this.choosedAllergies.push(name);
     } else {
-      this.choosedAllergies.splice(index, 0);
+      this.choosedAllergies.splice(index, 1);
     }
   }
 
@@ -107,7 +105,7 @@ export class SignupComponent implements OnInit {
     private ingredientsService: IngredientsService,
     private cookiesService:CookiesService
   ) {
-    this.createUserSignupFormGroup = this.formBuilder.group<CreateUserSignup>({
+    this.createUserSignupFormGroup = this.formBuilder.group<CreateUserSignupFormGroup>({
       email: '',
       firstname: '',
       lastname: '',

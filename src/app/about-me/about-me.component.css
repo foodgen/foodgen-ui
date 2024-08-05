@@ -5,3 +5,110 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+.about-me{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  z-index: 2;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.up-part{
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid white;
+  width: 900px;
+}
+
+.down-part{
+  display: flex;
+  gap: 30px;
+  flex-direction: row;
+}
+
+.user-photo{
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: black;
+}
+
+.information-wrapper{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+}
+
+.user-information{
+  padding-top: 50px;
+}
+
+.name{
+  font-size: x-large;
+  color: white;
+  padding: 5px;
+}
+
+.username{
+  font-size: large;
+  color: rgb(189, 189, 189);
+  padding: 5px;
+}
+
+.overlay-custom{
+  z-index: 1;
+}
+
+.allergies, .preferences{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.checkboxes{
+  width: 300px;
+  flex-wrap: wrap;
+  display: flex;
+  max-height: 130px;
+  min-height: 130px;
+  overflow-y: auto;
+  padding-left: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  gap: 10px;
+}
+
+.checkboxes-wrapper{
+  min-height: 250px;
+  width: 450px;
+  background-color: white;
+  padding-top: 10px;
+  border-radius: 6px;
+}
+
+.title{
+  color: white;
+  text-decoration: underline;
+}
+
+.return{
+  position: fixed;
+  color: white;
+  font-size: 16pt;
+  padding: 30px;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.418);
+  border-bottom-right-radius: 50%;
+}
+
+.return:hover.return{
+  background-color: var(--orange);
+  color: white;
+  transition-duration: 500ms;
+}
