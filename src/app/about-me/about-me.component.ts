@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { CookiesService } from './../shared/services/cookies.service';
+import { RouteProtectionService } from './../auth/route-protection.service';
+import { Component, OnInit } from '@angular/core';
 import { SidebarComponent } from "../shared/sidebar/sidebar.component";
-import { AuthComponent } from "../auth/auth.component";
 import { MiniSearchComponent } from '../shared/mini-search/mini-search.component';
 import { CheckboxComponent } from '../shared/checkbox/checkbox.component';
 import { NgFor } from '@angular/common';
@@ -11,7 +12,6 @@ import { User } from '../@types/User.type';
   standalone: true,
   imports: [
     SidebarComponent,
-    AuthComponent,
     NgFor,
     MiniSearchComponent,
     CheckboxComponent
@@ -19,7 +19,7 @@ import { User } from '../@types/User.type';
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.css'
 })
-export class AboutMeComponent {
+export class AboutMeComponent implements OnInit{
   choosedAllergies: string[] = [];
   choosedPreferences: string[] = [];
   allergies: string[] = [];
@@ -41,5 +41,17 @@ export class AboutMeComponent {
     } else {
       this.choosedAllergies.splice(index, 0);
     }
+  }
+
+  ngOnInit(): void {
+    this.cookiesService.getCookie().then((token)=>{
+      return this.routeProtectionService.routeProtection(token, "signin", this.cookiesService)
+    }).then((user)=>{
+      this.user = user
+    })
+  }
+
+  constructor(private routeProtectionService:RouteProtectionService, private cookiesService:CookiesService){
+
   }
 }

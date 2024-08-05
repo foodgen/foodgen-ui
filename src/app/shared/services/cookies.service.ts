@@ -23,15 +23,15 @@ export class CookiesService {
     this.setCookie('');
   }
 
-  getCookie() {
-    if (isPlatformBrowser(this.platformId)) {
-      const token = this.document.cookie;
-      console.log('from token');
-      if (token.length === 0) {
-        return;
+  async getCookie():Promise<string>{
+    return new Promise((res, rej) => {
+      if (isPlatformBrowser(this.platformId)) {
+        const token = this.document.cookie;
+        if (token.length === 0) {
+          rej("no token")
+        }
+        res(token.split('=')[1]);
       }
-      return token.split('=')[1];
-    }
-    return ""
+    });
   }
 }
