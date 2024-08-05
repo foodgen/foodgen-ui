@@ -1,5 +1,4 @@
 export const environement = {
-  //TODO: configure .env
-  apiURL: 'https://noURL.com',
+  apiURL:  'please add the API_URL env in .env',
   cookieIdentifier: "token"
 }

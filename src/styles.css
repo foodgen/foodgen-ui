@@ -1,13 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-  --orange: rgb(253, 180, 45);
+  --orange: rgb(247, 158, 56);
   --grey: rgba(27, 27, 27, 0.572);
-  --green: rgb(33, 214, 16);
+  --green: rgb(56, 187, 4);
   font-family: sans-serif;
 }
 
 a{
   color:var(--orange)
+}
+
+h3{
+  text-decoration: underline;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 body{
@@ -20,4 +26,11 @@ body{
 }
 .show{
 
+}
+
+.overlay{
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background-color: rgba(19, 18, 18, 0.438);
 }

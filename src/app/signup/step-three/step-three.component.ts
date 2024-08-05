@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { InputComponent } from '../../shared/input/input.component';
 import { CastToFormcontrolPipe } from '../../shared/cast-to-formcontrol/cast-to-formcontrol.pipe';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { NgClass } from '@angular/common';
+import { NgClass, NgIf } from '@angular/common';
 import { Steps } from '../signup.component';
 
 @Component({
@@ -11,6 +11,7 @@ import { Steps } from '../signup.component';
   imports: [
     InputComponent,
     CastToFormcontrolPipe,
+    NgIf,
     ReactiveFormsModule,
     NgClass
   ],
@@ -19,7 +20,7 @@ import { Steps } from '../signup.component';
 })
 export class StepThreeComponent {
   @Input("step-three-createUserSignupFormGroup")
-  createUserSignupFormGroup!: FormGroup;
+  createUserSignupFormGroup?: FormGroup;
   @Input("step-three-showed")
   showed: number = 0;
 }

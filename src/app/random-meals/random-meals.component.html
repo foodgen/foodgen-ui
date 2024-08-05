@@ -1,8 +1,19 @@
 <div class="random-meals-wrapper">
-  <div class="options">
+  <div class="overlay">
 
   </div>
-  <div class="food-list">
+  <div class="random-meals">
+    <app-sidebar></app-sidebar>
+    <div class="options">
 
+    </div>
+    <div class="food-list">
+      <ng-container *ngFor="let meal of randomMeals">
+        <app-food-section [food-section-meal]="meal"></app-food-section>
+      </ng-container>
+    </div>
+    <div class="regenerate">
+      <app-button button-variant="secondary" [handleClick]="handleClickRegenerate.bind(this)">Regenerate</app-button>
+    </div>
   </div>
 </div>

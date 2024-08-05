@@ -30,6 +30,49 @@
   justify-content: space-between;
 }
 
+.allergies, .preferences{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.checkboxes{
+  width: 300px;
+  flex-wrap: wrap;
+  display: flex;
+  max-height: 130px;
+  min-height: 130px;
+  overflow-y: auto;
+  padding-left: 5px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  gap: 10px;
+}
+
+.checkboxes-wrapper{
+  background-color: white;
+  padding-top: 10px;
+  border-radius: 6px;
+}
+
+.button-place{
+  display: flex;
+  justify-content: end;
+}
+
+.sex{
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sex select{
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 4.5px;
+  padding-bottom: 4.5px;
+}
+
 .logo-part{
   display: flex;
   width: 100%;

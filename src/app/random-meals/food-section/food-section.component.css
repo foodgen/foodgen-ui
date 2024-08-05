@@ -1,0 +1,55 @@
+.food-section-wrapper{
+  padding: 50px;
+}
+
+.food-section{
+  display: flex;
+  flex-direction: column;
+}
+
+.photo{
+  background-color: rgba(0, 0, 0, 0.39);
+  border-radius: 20px;
+  overflow: hidden;
+  height: 200px;
+  width: 200px;
+}
+
+.region{
+  padding-bottom: 5px;
+  padding-top: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  color: var(--orange);
+}
+
+
+.up-part{
+  display: flex;
+  flex-direction: row
+}
+.ingredients ul{
+  padding: none;
+  padding-left: 20px;
+}
+
+.ingredients-list{
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+}
+
+h3{
+  color: var(--orange);
+}
+
+.below-photo{
+  width: 400px;
+}
+
+.btn-recipe{
+  display: flex;
+  align-items: center;
+}

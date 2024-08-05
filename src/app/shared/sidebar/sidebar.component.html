@@ -1,0 +1,15 @@
+<div class="sidebar-wrapper" [ngClass]="{'hidden' : !showed}">
+  <div class="sidebar">
+    <app-user-information></app-user-information>
+    <app-links></app-links>
+    <div class="logout">
+      <label for="logout" (input)="handleLogout()">
+        <input type="button" hidden id="logout">
+        Logout
+      </label>
+      <div class="logout-logo">
+        <img src="/assets/logout.png" alt="" width="30px" height="30px">
+      </div>
+    </div>
+  </div>
+</div>

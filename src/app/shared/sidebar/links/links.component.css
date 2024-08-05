@@ -1,0 +1,31 @@
+.links-wrapper{
+  width: 100%;
+}
+
+.links-wrapper ul{
+  padding: 0;
+  list-style: none;
+}
+
+.links-wrapper li{
+  border-top: 1px solid rgba(0, 0, 0, 0.226);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.links-wrapper li:hover{
+  transition-duration: 500ms;
+  background-color: var(--orange);
+}
+
+.links-wrapper li:hover a{
+  transition-duration: 500ms;
+  color: white;
+}
+
+a{
+  text-decoration: none;
+}
