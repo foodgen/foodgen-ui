@@ -27,20 +27,20 @@ export class AboutMeComponent implements OnInit{
   preferences: string[] = [];
   user?:User;
   handleChoosePreference(name: string) {
-    const index = this.choosedPreferences.findIndex((value) => (value = name));
-    if (index < 0) {
+    const index = this.choosedPreferences.findIndex((value) => (value === name));
+    if (index === -1) {
       this.choosedPreferences.push(name);
     } else {
-      this.choosedPreferences.splice(index, 0);
+      this.choosedPreferences.splice(index, 1);
     }
   }
 
   handleChooseAllergie(name: string) {
-    const index = this.choosedAllergies.findIndex((value) => (value = name));
-    if (index < 0) {
+    const index = this.choosedAllergies.findIndex((value) => (value === name));
+    if (index === -1) {
       this.choosedAllergies.push(name);
     } else {
-      this.choosedAllergies.splice(index, 0);
+      this.choosedAllergies.splice(index, 1);
     }
   }
 
