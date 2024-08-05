@@ -3,7 +3,7 @@
     <app-user-information></app-user-information>
     <app-links></app-links>
     <div class="logout">
-      <label for="logout">
+      <label for="logout" (input)="handleLogout()">
         <input type="button" hidden id="logout">
         Logout
       </label>
