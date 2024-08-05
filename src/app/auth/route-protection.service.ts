@@ -3,7 +3,7 @@ import { CookiesService } from '../shared/services/cookies.service';
 import { AuthService } from './auth.service';
 import { Router } from '@angular/router';
 import { User } from '../@types/User.type';
-import { catchError, Observable } from 'rxjs';
+import { catchError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',

@@ -3,14 +3,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environement } from '../../environments/environment';
 import { from, Observable } from 'rxjs';
-import { CookiesService } from '../shared/services/cookies.service';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class SignupService {
-  constructor(private client: HttpClient, private cookiesService:CookiesService) {
+  constructor(private client: HttpClient) {
   }
 
   signup(createUserSignup:Partial<CreateUserSignup>){
