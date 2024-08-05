@@ -4,13 +4,13 @@ import { Component, OnInit } from '@angular/core';
 import { SignupService } from './signup.service';
 import { ButtonComponent } from '../shared/button/button.component';
 import { FormGroup, ReactiveFormsModule, FormBuilder } from '@angular/forms';
-import { CreateUserSignup } from '../@types/CreateUserSignup.type';
 import { catchError } from 'rxjs';
 import { NgIf } from '@angular/common';
 import { StepOneComponent } from "./step-one/step-one.component";
 import { StepThreeComponent } from "./step-three/step-three.component";
 import { StepTwoComponent } from "./step-two/step-two.component";
 import { RouterModule } from '@angular/router';
+import { CreateUserSignupFormGroup } from './CreateUserSignupFormGroup.type';
 
 @Component({
   selector: 'app-signup',
@@ -105,7 +105,7 @@ export class SignupComponent implements OnInit {
     private ingredientsService: IngredientsService,
     private cookiesService:CookiesService
   ) {
-    this.createUserSignupFormGroup = this.formBuilder.group<CreateUserSignup>({
+    this.createUserSignupFormGroup = this.formBuilder.group<CreateUserSignupFormGroup>({
       email: '',
       firstname: '',
       lastname: '',

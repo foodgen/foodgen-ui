@@ -15,9 +15,10 @@
           <img src="" alt="">
         </div>
         <div class="user-information">
-          <div class="name">Name + Firstname + Lastname</div>
-          <div class="username">Username</div>
-          <div class="username">emailgmail.com</div>
+          <div class="name">{{user?.firstname}} {{user?.lastname}}</div>
+          <div class="username">{{user?.username}}</div>
+          <div class="username">{{user?.email}}</div>
+          <div class="username">{{user?.sex}}</div>
         </div>
       </div>
     </div>
@@ -26,19 +27,33 @@
         <div class="title">Allergies</div>
         <div class="checkboxes-wrapper">
           <app-mini-search mini-search-placeholder="Search Allergies"></app-mini-search>
-          <div class="checkboxes" *ngFor="let allergie of allergies">
-            <signup-checkbox [checkbox-handleChoose]="handleChooseAllergie" checkbox-label="{{allergie}}"
-              checkbox-name="{{allergie}}" checkbox-value="{{allergie}}" />
+          <div *ngIf="user">
+            <div class="checkboxes" *ngFor="let allergie of choosedAllergies">
+              <signup-checkbox [checkbox-handleChoose]="handleChooseAllergie" checkbox-label="{{allergie}}"
+                checkbox-name="{{allergie}}" checkbox-value="{{allergie}}" />
+            </div>
+            <hr>
+            <div class="checkboxes" *ngFor="let allergie of allergies">
+              <signup-checkbox [checkbox-handleChoose]="handleChooseAllergie" checkbox-label="{{allergie}}"
+                checkbox-name="{{allergie}}" checkbox-value="{{allergie}}" />
+            </div>
           </div>
         </div>
-      </div>
-      <div class="preferences">
-        <div class="title">Preferences</div>
-        <div class="checkboxes-wrapper">
-          <app-mini-search mini-search-placeholder="Search preference"></app-mini-search>
-          <div class="checkboxes" *ngFor="let preference of preferences">
-            <signup-checkbox [checkbox-handleChoose]="handleChoosePreference" checkbox-label="{{preference}}"
-              checkbox-name="{{preference}}" checkbox-value="{{preference}}" />
+        <div class="preferences">
+          <div class="title">Preferences</div>
+          <div class="checkboxes-wrapper">
+            <app-mini-search mini-search-placeholder="Search preference"></app-mini-search>
+            <div *ngIf="user">
+              <div class="checkboxes" *ngFor="let preference of choosedPreferences">
+                <signup-checkbox [checkbox-handleChoose]="handleChoosePreference" checkbox-label="{{preference}}"
+                  checkbox-name="{{preference}}" checkbox-value="{{preference}}" />
+              </div>
+            </div>
+            <hr>
+            <div class="checkboxes" *ngFor="let preference of preferences">
+              <signup-checkbox [checkbox-handleChoose]="handleChoosePreference" checkbox-label="{{preference}}"
+                checkbox-name="{{preference}}" checkbox-value="{{preference}}" />
+            </div>
           </div>
         </div>
       </div>

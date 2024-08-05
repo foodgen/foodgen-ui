@@ -1,6 +1,4 @@
-import { FormArray, FormControl } from "@angular/forms"
-
-export interface CreateUserSignup{
+export interface CreateUserSignupFormGroup{
   firstname: string
   lastname: string
   username: string

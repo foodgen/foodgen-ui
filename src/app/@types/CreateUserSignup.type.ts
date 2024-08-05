@@ -5,4 +5,6 @@ export interface CreateUserSignup{
   email: string
   sex: "H" | "F"
   password: string
+  preferences: string[]
+  allergies: string[]
 }

@@ -4,7 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { SidebarComponent } from "../shared/sidebar/sidebar.component";
 import { MiniSearchComponent } from '../shared/mini-search/mini-search.component';
 import { CheckboxComponent } from '../shared/checkbox/checkbox.component';
-import { NgFor } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { User } from '../@types/User.type';
 
 @Component({
@@ -14,6 +14,7 @@ import { User } from '../@types/User.type';
     SidebarComponent,
     NgFor,
     MiniSearchComponent,
+    NgIf,
     CheckboxComponent
   ],
   templateUrl: './about-me.component.html',
@@ -48,6 +49,8 @@ export class AboutMeComponent implements OnInit{
       return this.routeProtectionService.routeProtection(token, "signin", this.cookiesService)
     }).then((user)=>{
       this.user = user
+      this.choosedAllergies = user.allergies
+      this.choosedPreferences = user.preferences
     })
   }
 
