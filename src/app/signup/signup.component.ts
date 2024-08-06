@@ -9,7 +9,7 @@ import { NgIf } from '@angular/common';
 import { StepOneComponent } from "./step-one/step-one.component";
 import { StepThreeComponent } from "./step-three/step-three.component";
 import { StepTwoComponent } from "./step-two/step-two.component";
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { CreateUserSignupFormGroup } from './CreateUserSignupFormGroup.type';
 
 @Component({
@@ -49,6 +49,7 @@ export class SignupComponent implements OnInit {
       })
     ).subscribe(token => {
       this.cookiesService.setCookie(token)
+      this.router.navigateByUrl("/random-meals")
     })
   }
   handleChoosePreference(name: string) {
@@ -103,7 +104,8 @@ export class SignupComponent implements OnInit {
     private signupService: SignupService,
     private formBuilder: FormBuilder,
     private ingredientsService: IngredientsService,
-    private cookiesService:CookiesService
+    private cookiesService:CookiesService,
+    private router: Router
   ) {
     this.createUserSignupFormGroup = this.formBuilder.group<CreateUserSignupFormGroup>({
       email: '',
